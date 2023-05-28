@@ -1,0 +1,110 @@
+.footerMain {
+    background: linear-gradient(217.29deg, #A026DA -3.02%, #4738F1 105.19%);
+    position: relative;
+    overflow-y: hidden;
+  }
+
+  .footerMain .FooterHeader .Footerlogo{
+    position: relative;
+    vertical-align: middle;
+    color: #FFFFFF;
+    margin-left: 0%;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2.4vw;
+    line-height: 45px;
+  } 
+
+  .footerMain .FooterHeader{
+    display: flex;
+    justify-content: center;
+    padding-top: 5%;
+    position: relative;
+  }
+  
+  .footerMain .FooterHeader .Footerlogo {
+    display: flex;
+    margin: 0;
+    vertical-align: middle;
+  }
+
+  .footerMain .FooterHeader .Footerlogo img{
+      margin-right: 8px;
+      margin-bottom: 5px;
+      height: 56px;
+      width: 56px;
+  }
+
+  .footerMain .FooterHeader .Footerlogo span{
+    line-height: 6vh;
+  }
+ 
+  .footerMain .FooterListLinks{
+    margin-top: 4.5%;
+  }
+  
+  .footerMain .FooterListLinks ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .footerMain .FooterListLinks ul li{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.4vw;
+    line-height: 36px;
+    color: #FFFFFF;
+    margin: 0 3%;
+  }
+  
+  .footerMain .FooterLine{
+    width: 80%;
+    margin:3% auto;
+    display: flex;
+  }
+
+  .footerMain .FooterImageLinks{
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+
+  .FooterImageLinks a{
+    text-decoration: none;
+    margin:0 1.5%;
+  }
+
+  .footerMain .FooterImageLinks img{
+    width: 3vw;
+    height: 4.8vh;
+    margin:0 1.5%;
+  }
+
+  .footerMain .FooterCopyRight h3{
+    margin-top: 8%;
+    font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.5vw;
+  line-height: 36px;
+  text-align: center;
+  color: #FFFFFF;
+  padding-bottom: 0.5%;
+  }
+
+  .footerMain .FooterCopyRight .footerrect1{
+    position: absolute;
+    bottom: -2%;
+    width: 30%;
+  }
+
+  .footerMain .FooterCopyRight .footerrect2{
+    position: absolute;
+    display: flex;
+    margin-left:70%;
+    bottom: -2%;
+    width: 30%;
+  }

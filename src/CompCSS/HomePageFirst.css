@@ -1,0 +1,120 @@
+.HomePageFirstMain{
+    position: relative;
+    max-height: 100vh;
+    overflow-y: hidden;
+}
+
+
+.IntroContainerHeading{
+    position: relative;
+    width: 80%;
+    left: 3%;
+    margin-top: 12%;
+}
+
+.IntroContainerHeading h1:first-child{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 5vw;
+    line-height: 126%;
+    color: #333333;
+}
+
+.IntroContainerHeading h1:last-child{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 5vw;
+    line-height: 126%;
+    color: #A026DA;
+}
+
+.IntroContainerPara{
+    position: relative;
+    width: 40vw;
+    height: 6.5vh;
+    left: 3%;
+    top: 5vh;
+}
+
+.IntroContainerPara p{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.6vw;
+    line-height: 29px;
+    letter-spacing: 0.06em;
+    color: #6D6D6D;
+
+}
+
+.IntroContainerLine{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 160px;
+    height: 8px;
+    left: 3%;
+    top: 58px;
+    background: linear-gradient(217.29deg, #A026DA -3.02%, #4738F1 105.19%);
+    opacity: 0.5;
+    border-radius: 24px;
+}
+
+.IntroContainerLine2{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 8px;
+    height: 8px;
+    left: 160px;
+    margin: 0 0 0 4px;
+    background: linear-gradient(217.29deg, #A026DA -3.02%, #4738F1 105.19%);
+    opacity: 0.5;
+    border-radius: 24px;
+}
+
+
+
+.IntroContainerButton button{ 
+    text-decoration: none;
+    box-sizing: border-box;
+    position: relative;
+    width: 22%;
+    height: fit-content;
+    left: 3%;
+    top: 10vw;
+    background: #333333;
+    border: 5px solid #333333;
+}
+
+.InsideButtonText{
+    position: relative;
+    margin: 0.7vh 0;
+    margin-right: 64px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.8vw;
+    line-height: 42px;
+    /* identical to box height */
+    color: #FFFFFF;
+}
+
+.InsideButtonText svg{
+    position: absolute;
+    left: 96%;
+    top: 28%;
+}
+
+.IntroContainerImage img{
+    position:relative;
+    z-index: -1;
+    margin-top: -24%;
+    margin-left: 40%;
+    width: 60%;
+    height: 82.6%;
+}
+
+

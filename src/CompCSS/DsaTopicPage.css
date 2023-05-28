@@ -1,0 +1,111 @@
+.DsaTopicPageContentMain{
+    margin-top: 5%;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    background-color: #FFFF;
+}
+
+.DsaTopicPageContentMain h1{
+    padding:10px 0 10px 0;
+	color: #333;
+	font-size: 64px;
+	/* text-shadow: 1px 1px 1px #333,
+    1px 2px 1px #333,
+    1px 16px 10px rgba(16,16,16,0.2),
+    1px 24px 35px rgba(16,16,16,0.2),
+    1px 30px 60px rgba(16,16,16,0.4); */
+}
+
+.DsaTopicPageContentCardMain{
+    padding: 0 8%;
+    padding-bottom: 8%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.DsaTopicPageCard{
+	
+	font-family: 'Roboto Condensed', Arial, sans-serif;
+	position: relative;
+	height:446px;
+	width:310px;
+	display:flex;
+    flex-direction: row;
+    flex-wrap: wrap ;
+    margin-top:5%;
+	border-radius: 10px;
+	/* box-shadow: 
+    1px 3px 10px rgba(16,16,16,0.2),
+    1px 2px 35px rgba(16,16,16,0.2),
+    1px 30px 60px rgba(16,16,16,0.4); */
+}
+.DsaTopicPageCard .DsaTopicCardfront,
+.DsaTopicPageCard .back
+{
+	overflow: hidden;
+	text-align: left;
+	box-shadow:rgba(0,0,0,0.7) 0 2px 6px -2px;
+	background: #fff;
+	border-radius: 10px;
+	backface-visibility: hidden;
+	background-color: #222;
+	color:#fff;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	transition: all .3s ease-in-out;
+}
+.DsaTopicPageCard .DsaTopicCardfront{
+    background: var(--imageUrl);
+    background-size:cover;
+	background-repeat: no-repeat;
+	background-position: center  center;
+	transform: rotateY(0);
+	z-index: 2;
+}
+
+.DsaTopicPageCard .back{
+	background:#545454;
+	transform: rotateY(-180deg);
+	padding:20px;
+    font-family: 'Poppins', sans-serif;
+}
+.DsaTopicPageCard .back p{
+	margin:0 0 20px 0;
+    font-size: 22px;
+    text-align:start;
+    font-weight: 600;
+    text-shadow:#fff;
+}
+.DsaTopicPageCard .back .btn{
+	position: absolute;
+	bottom:5%;
+    width: 90%;
+    align-items: center;
+    right: 15px;
+}
+
+.DsaTopicPageCard .btn{
+		padding:10px;
+		display: block;
+		color:inherit;
+		border:1px solid #fff;
+		text-decoration: none;
+		border-radius: 6px;
+		text-align: center;
+}
+.DsaTopicPageCard .btn:hover{
+	background-color:rgba(255,255,255,0.1);
+}
+
+.DsaTopicPageCard:hover .DsaTopicCardfront{
+	transform: rotateY(180deg);
+}
+.DsaTopicPageCard:hover .back{
+	transform: rotateY(0);
+}

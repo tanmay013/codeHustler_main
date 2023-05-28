@@ -1,0 +1,162 @@
+[
+	{
+	  "id": "6349237f5301be0462b252cc",
+	  "dataStructure": "Array",
+	  "title": "Set Matrix Zeroes",
+	  "difficulty": 3,
+	  "problemstatement": "Given an m x n integer matrix matrix, if an element is 0, set its entire row and column to 0's.\n\nYou must do it in place.",
+	  "example": [
+		"Input: matrix = [[1,1,1],[1,0,1],[1,1,1]]\n\nOutput: [[1,0,1],[0,0,0],[1,0,1]]",
+		"Input: matrix = [[0,1,2,0],[3,4,5,2],[1,3,1,5]]\n\nOutput: [[0,0,0,0],[0,4,5,0],[0,3,1,0]]"
+	  ],
+	  "task": "A straightforward solution using O(mn) space is probably a bad idea.\nA simple improvement uses O(m + n) space, but still not the best solution.",
+	  "links": [
+		"https://leetcode.com/problems/set-matrix-zeroes/",
+		"https://www.codingninjas.com/codestudio/problems/set-matrix-zeros_3846774?topList=striver-sde-sheet-problems&utm_source=striver&utm_medium=website",
+		"",
+		""
+	  ],
+	  "solutionexplanation": "We can use two separate arrays one for rows (rowsArray) and one for columns (colsArray) and initialize them to 1\nWhile traversing the given matrix whenever we encounter 0 at (i,j), we will set rowsArray[i]=0 and colsArray[j]=0\nAfter completion of step 2, again iterate through the matrix and for any (i,j), if rowsArray[i] or colsArray[j] is 0 then update matrix[i][j] to 0. ",
+	  "solution": [
+		"class Solution {\npublic:\n    void setZeroes(vector<vector<int>>& matrix) {\n        \n        int col0=1, rows=matrix.size(),cols=matrix[0].size();\n        \n        for(int i=0;i<rows;i++){\n            if(matrix[i][0]==0) col0=0;\n            for(int j=1;j<cols;j++)\n                if(matrix[i][j]==0)\n                    matrix[i][0]=matrix[0][j]=0;\n        }    \n            \n            \n           for(int i=rows-1;i>=0;i--){\n               for(int j=cols-1;j>=1;j--)\n                if(matrix[i][0]==0 || matrix[0][j]==0)\n                    matrix[i][j]=0;\n                \n               if(col0==0) matrix[i][0]=0;\n             \n            \n        }\n        \n        \n    }\n\n};",
+		"class Solution {\n    public static void row(int arr[][],int r,int c){\n        int row=arr.length;\n        int col=arr[0].length;\n        for(int i=0;i<col;i++){\n            arr[r][i]=0;\n        }\n        for(int j=0;j<row;j++){\n            arr[j][c]=0;\n        }\n    }\n    public void setZeroes(int[][] matrix) {\n        List<List<Integer>> list = new ArrayList<>();\n        for(int k=0;k<matrix.length;k++){\n            for(int l=0;l<matrix[0].length;l++){\n                if(matrix[k][l]==0){\n                    ArrayList<Integer> temp = new ArrayList<>();\n                    temp.add(k);\n                    temp.add(l);\n                    list.add(temp);\n                }\n            }\n        }\n\n        System.out.print(list);\n\n        for(int a=0;a<list.size();a++){\n            row(matrix,list.get(a).get(0),list.get(a).get(1));\n        }\n\n\n    }\n}"
+	  ],
+	  "companiesasked": [
+		"Google",
+		"Amazon",
+		"Microsoft"
+	  ],
+	  "timecomplexity": [
+		"O(MN)",
+		"O(M+N)"
+	  ]
+	},
+	{
+	  "id": "63b657d39d071456819bd4a9",
+	  "dataStructure": "Array",
+	  "title": " Sort Colors",
+	  "difficulty": 3,
+	  "problemstatement": "Given an array nums with n objects colored red, white, or blue, sort them in-place so that objects of the same color are adjacent,\nwith the colors in the order red, white, and blue.We will use the integers 0, 1, and 2 to represent the color red, white, and blue, respectively.",
+	  "example": [
+		"Input: nums = [2,0,2,1,1,0]\nOutput: [0,0,1,1,2,2]",
+		"Input: nums = [2,0,1]\nOutput: [0,1,2]"
+	  ],
+	  "task": "You must solve this problem without using the library's sort function.",
+	  "links": [
+		"https://leetcode.com/problems/sort-colors/",
+		"https://www.codingninjas.com/codestudio/problems/sort-0-1-2_631055",
+		"https://practice.geeksforgeeks.org/problems/sort-an-array-of-0s-1s-and-2s4231/1",
+		""
+	  ],
+	  "solutionexplanation": "Dutch National Flag problem\nThe problem was posed with three colors, here `0′, `1′ and `2′. The array is divided into four sections:\n\narr[1] to arr[low – 1]\n\narr[low] to arr[mid – 1]\n\narr[mid] to arr[high – 1]\n\narr[high] to arr[n]\n\nIf the ith element is 0 then swap the element to the low range.\nSimilarly, if the element is 1 then keep it as it is.\nIf the element is 2 then swap it with an element in high range. ",
+	  "solution": [
+		"class Solution {\n\tpublic void sortColors(int[] nums) {\n\t\tint low = 0, mid = 0, high = nums.length-1;\n\t\twhile(mid <= high){\n\t\t\tif(nums[mid] == 0 ){\n\t\t\t\t//swap with left\n\t\t\t\tswap(nums,low, mid );\n\t\t\t\tlow++;\n\t\t\t\tmid++;\n\t\t\t}else if(nums[mid] == 2){\n\t\t\t\tswap(nums, mid, high);\n\t\t\t\thigh--;\n\t\t\t}else{\n\t\t\t\tmid++;\n\t\t\t}\n\t\t}\n\t}\n\tpublic static void swap(int[] nums, int i, int j){\n\t\tint temp = nums[i];\n\t\tnums[i] = nums[j];\n\t\tnums[j] = temp;\n\t}\n}",
+		"class Solution {\n\tpublic:\n\t\tvoid sortColors(vector<int>& nums) {\n\t\t\tint lo = 0;\n\t\t\tint hi = nums.size() - 1;\n\t\t\tint mid = 0;\n\t\t\twhile (mid <= hi) {\n\t\t\t\tswitch (nums[mid]) {\n\t\t\t\t\t// If the element is 0\n\t\t\t\t\tcase 0:\n\t\t\t\t\tswap(nums[lo++], nums[mid++]);\n\t\t\t\t\tbreak;\n\t\t\t\t\t// If the element is 1 .\n\t\t\t\t\tcase 1:\n\t\t\t\t\tmid++;\n\t\t\t\t\tbreak;\n\t\t\t\t\t// If the element is 2\n\t\t\t\t\tcase 2:\n\t\t\t\t\tswap(nums[mid], nums[hi--]);\n\t\t\t\t\tbreak;\n\t\t\t\t}\n\t\t\t}\n\n\t\t}\n\t};"
+	  ],
+	  "companiesasked": [
+		"Google",
+		"Amazon",
+		"Microsoft"
+	  ],
+	  "timecomplexity": [
+		"O(N)",
+		"NULL"
+	  ]
+	},
+	{
+		"id": "63b665ae9d071456819bd4aa",
+		"dataStructure": "Array",
+		"title": "  Median of Two Sorted Arrays",
+		"difficulty": 4,
+		"problemstatement": "Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.",
+		"example": [
+		  "Input: nums1 = [1,3], nums2 = [2]\n\nOutput: 2.00000\n\nExplanation: merged array = [1,2,3] and median is 2.",
+		  "Input: nums1 = [1,2], nums2 = [3,4]\n\nOutput: 2.50000\n\nExplanation: merged array = [1,2,3,4] and median is (2 + 3) / 2 = 2.5."
+		],
+		"task": "The overall run time complexity should be O(log (m+n)).",
+		"links": [
+		  "https://leetcode.com/problems/median-of-two-sorted-arrays/",
+		  "https://www.codingninjas.com/codestudio/problem-details/median-of-two-sorted-arrays_985294",
+		  "https://practice.geeksforgeeks.org/problems/median-of-2-sorted-arrays-of-different-sizes/1",
+		  ""
+		],
+		"solutionexplanation": "The idea is to merge them into third array and there are two cases:\n\nCase 1: If the length of the third array is odd, then the median is at (length)/2th index in the array obtained after merging both the arrays.\n\nCase 2: If the length of the third array is even, then the median will be the average of elements at index ((length)/2 ) and ((length)/2 – 1). \nIn the array obtained after merging both arrays.",
+		"solution": [
+		  "class Solution {\n\tpublic double findMedianSortedArrays(int[] nums1, int[] nums2) {\n\t\tint[] arr = new int[nums1.length + nums2.length];\n\t\tfor (int i = 0, j = 0, k = 0; i < arr.length; i++) {\n\t\t\tif (j == nums1.length)\n\t\t\t\tfor (; i < arr.length; i++)\n\t\t\t\t\tarr[i] = nums2[k++];\n\t\t\telse if (k == nums2.length)\n\t\t\t\tfor (; i < arr.length; i++)\n\t\t\t\t\tarr[i] = nums1[j++];\n\t\t\telse {\n\t\t\t\tarr[i] = nums1[j] > nums2[k] ? nums2[k++] : nums1[j++];\n\t\t\t}\n\t\t}\n\t\tint i = arr.length / 2;\n\t\treturn arr.length % 2 == 0 ? (double) (arr[i] + arr[i - 1]) / 2 : (double) arr[i];\n\t}\n}",
+		  "class Solution {\npublic:\n\tdouble findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {\n\t\tint len1 = nums1.size(),len2 = nums2.size();\n\t\tint len = len1 + len2;\n\t\tif (len & 1){\n\t\t\treturn findKth(nums1,nums2,len / 2 + 1);\n\t\t} else{\n\t\t\treturn (findKth(nums1,nums2,len / 2) + findKth(nums1,nums2,len / 2 + 1))/2;\n\t\t}\n\t}\n\tdouble findKth(vector<int> nums1,vector<int> nums2,int k){\n\t\tint len1 = nums1.size(),len2 = nums2.size();\n\t\tif (len1 > len2)    return findKth(nums2,nums1,k);\n\t\tif (len1 == 0)  return nums2[k - 1];\n\t\tif (k == 1)  return min(nums1[0],nums2[0]);\n\t\tint a = min(k / 2,len1),b = k - a;\n\t\tif (nums1[a - 1] < nums2[b - 1])  return findKth(vector<int>(nums1.begin() + a,nums1.end()),nums2,k - a);\n\t\telse if (nums1[a - 1] > nums2[b - 1])   return findKth(nums1,vector<int>(nums2.begin() + b,nums2.end()),k - b);\n\t\telse    return nums1[a - 1];\n\t}\n};"
+		],
+		"companiesasked": [
+		  "Google",
+		  "Amazon",
+		  "Microsoft"
+		],
+		"timecomplexity": [
+		  "O(log (m+n))",
+		  "O(0)"
+		]
+	  },
+	  {
+		"id": "63b6a17f682d2e09dd393f44",
+		"dataStructure": "Array",
+		"title": "Minimize the Thickness",
+		"difficulty": 3,
+		"problemstatement": "You are given a sequence 𝑎=[𝑎1,𝑎2,…,𝑎𝑛] consisting of 𝑛 positive integers.\nLet's call a group of consecutive elements a segment. Each segment is characterized by two indices:\nthe index of its left end and the index of its right end. Denote by 𝑎[𝑙,𝑟] a segment of the sequence 𝑎 with the left end in 𝑙 and the right end in 𝑟,\ni.e. 𝑎[𝑙,𝑟]=[𝑎𝑙,𝑎𝑙+1,…,𝑎𝑟].\nFor example, if 𝑎=[31,4,15,92,6,5], then 𝑎[2,5]=[4,15,92,6], 𝑎[5,5]=[6], 𝑎[1,6]=[31,4,15,92,6,5] are segments.\nWe split the given sequence 𝑎 into segments so that:\neach element is in exactly one segment;\nthe sums of elements for all segments are equal.\nFor example, if 𝑎 = [55,45,30,30,40,100], then such a sequence can be split into three segments: 𝑎[1,2]=[55,45], 𝑎[3,5]=[30,30,40], 𝑎[6,6]=[100]. \nEach element belongs to exactly segment, the sum of the elements of each segment is 100.\nLet's define thickness of split as the length of the longest segment. For example, the thickness of the split from the example above is 3.\nFind the minimum thickness among all possible splits of the given sequence of 𝑎 into segments in the required way.",
+		"example": [
+		  "input\n2\n6\n55 45 30 30 40 100\n4\n10 23 7 13\n5\n10 55 35 30 65\n6\n4 1 1 1 1 4\n\noutput\n3\n4\n2\n3",
+		  "input\n2\n5\n10 55 35 30 65\n6\n4 1 1 1 1 4\n\noutput\n2\n3"
+		],
+		"task": "The first line contains a single integer 𝑡 (1≤𝑡≤100) — the number of test cases.\nEach test case is described by two lines.\nThe first line of each test case contains a single integer 𝑛 (1≤𝑛≤2000) — the length of the sequence 𝑎.\nThe second line of each test case contains exactly 𝑛 integers: 𝑎1,𝑎2,…,𝑎𝑛 (1≤𝑎𝑖≤106) — elements of the sequence 𝑎.\nIt is guaranteed that the sum of 𝑛 for all test cases does not exceed 2000.",
+		"links": [
+		  "",
+		  "",
+		  "",
+		  "https://codeforces.com/problemset/problem/1741/C"
+		],
+		"solutionexplanation": "Let's iterate over the length of the first segment of the split. Having fixed it, we actually fixed the sum that needs to be collected on all other segments. \nSince each element must belong to exactly one segment, we can build other segments greedily. If we have found a solution, \nwe will remember the length of the longest segment in it and try to update the answer. We have 𝑛 possible lengths of the first segment,\nfor each of which we greedily built the answer for 𝑛. Thus, the asymptotics of the solution will be 𝑂(𝑛2). ",
+		"solution": [
+		  "import java.util.Scanner;\npublic class C_ {\npublic static void main(String[] args)\n{\nScanner sc = new Scanner(System.in);\nint T = sc.nextInt();\nfor(int f = 1; f<=T; f++)\n{\nint n = sc.nextInt();\nint arr[] = new int[n];\nfor(int i=0; i<n; i++)\n{\narr[i] = sc.nextInt();\n}\nlong sum = 0;\nint ans = n;\nfor(int i=0; i<n; i++)\n{\nsum = sum + arr[i];\nlong temp = 0;\nint max = i+1;\nint prev = i+1;\nboolean check = true;\nboolean prp = false;\nfor(int j=i+1; j<n; j++)\n{\ntemp = temp + arr[j];\nif(sum==temp)\n{\ntemp = 0;\nmax = Math.max(max, j-prev+1);\nprev = j+1;\nprp = true;\n}\nelse if(temp>sum)\n{\ncheck = false;\nbreak;\n}\n}\nif(check && prp && temp==0)\n{\nans = Math.min(ans, max);\n}\n}\nSystem.out.println(ans);\n\n}\n\n\n}\n}",
+		  "#include<bits/stdc++.h>\nusing namespace std;\nint main()\n{\nint tc;\ncin>>tc;\nwhile(tc--){\nlong long n,i,j,k,tt,tk,ans=1e10,smm,sm=0;\ncin>>n;\nlong long a[n+1];\nans=n;\nfor(i=1;i<=n;i++)cin>>a[i];\nfor(i=1;i<=n;i++){\nsm+=a[i];\nsmm=0;\ntt=i;tk=0;\nfor(j=i+1;j<=n;j++){\nsmm+=a[j];\ntk++;\nif(smm==sm){\nsmm=0;\ntt=max(tk,tt);\ntk=0;\n}\n}\nif(tk==0){\nans=min(ans,tt);\n}\n}\ncout<<ans;\n}\n}"
+		],
+		"companiesasked": [
+		  "Google",
+		  "Amazon",
+		  "Microsoft"
+		],
+		"timecomplexity": [
+		  "O(n^2)",
+		  "o(N)"
+		]
+	  },
+	  {
+		"id": "63b6aa05682d2e09dd393f45",
+		"dataStructure": "Array",
+		"title": "Longest Substring Without Repeating Characters",
+		"difficulty": 2,
+		"problemstatement": "Given a string s, find the length of the longest substring without repeating characters.",
+		"example": [
+		  "Input: s = abcabcbb\n\nOutput: 3\n\nExplanation: The answer is abc, with the length of 3.",
+		  "Input: s = bbbbb\n\nOutput: 1\n\nExplanation: The answer is b, with the length of 1."
+		],
+		"task": "0 <= s.length <= 5 * 104\n\ns consists of English letters, digits, symbols and spaces.",
+		"links": [
+		  "https://leetcode.com/problems/longest-substring-without-repeating-characters/description/",
+		  "https://www.codingninjas.com/codestudio/problems/longest-substring-without-repeating-characters_758894",
+		  "https://practice.geeksforgeeks.org/problems/longest-distinct-characters-in-string5848/1?utm_source=gfg&utm_medium=article&utm_campaign=bottom_sticky_on_article",
+		  ""
+		],
+		"solutionexplanation": "The idea is to traverse the string and for each already visited character store its last occurrence in a hash table(Here unordered_map is used as a hash with key as character and value as its last position). The variable st stores the starting point of the current substring, maxlen stores the length of maximum length substring, and start stores the starting index of maximum length substring. While traversing the string, check whether the current character is present in the hash table or not.\nIf it is not present, then store the current character in the hash table with value as the current index. If it is already present in the hash table, this means the current character could repeat in the current substring. For this check, if the previous occurrence of character is before or after the starting point st of the current substring. If it is before st, then only update the value in the hash table. If it is after st, then find the length of current substring currlen as i-st, where i is the current index. Compare currlen with maxlen. If maxlen is less than currlen, then update maxlen as currlen and start as st. After complete traversal of the string, the required the longest substring without repeating characters is from s[start] to s[start+maxlen-1].",
+		"solution": [
+		  "public int lengthOfLongestSubstring(String s) {\nif (s.length()==0) return 0;\nHashMap<Character, Integer> map = new HashMap<Character, Integer>();\nint max=0;\nfor (int i=0, j=0; i<s.length(); ++i){\nif (map.containsKey(s.charAt(i))){\nj = Math.max(j,map.get(s.charAt(i))+1);\n}\nmap.put(s.charAt(i),i);\nmax = Math.max(max,i-j+1);\n}\nreturn max;\n}",
+		  "class Solution {\npublic:\nint lengthOfLongestSubstring(string s) {\nvector<int> mpp(256,-1);\n\nint left=0,right =0;\nint n=s.size();\nint len=0;\nwhile(right <n){\nif(mpp[s[right]]!=-1) left =max(mpp[s[right]]+1,left);\n\nmpp[s[right]]=right;\n\nlen=max(len,right-left+1);\nright++;\n}\nreturn len;\n}\n};"
+		],
+		"companiesasked": [
+		  "Amazon",
+		  "Microsoft"
+		],
+		"timecomplexity": [
+		  "O(N)",
+		  "o(N)"
+		]
+	  }
+	
+  ]

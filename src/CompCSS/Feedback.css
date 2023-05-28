@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.FeedbackBack{
+  background-color: #B9E0FF;
+  background-image: url("https://www.transparenttextures.com/patterns/ag-square.png");
+}
+
+.FeedbackMain {
+  background-color: #B9E0FF;
+  background-image: url("https://www.transparenttextures.com/patterns/ag-square.png");
+}
+
+.FeedbackBack{
+  background-color: #B9E0FF;
+  background-image: url("https://www.transparenttextures.com/patterns/ag-square.png");
+}
+
+.FeedbackMain,
+.FeedInput,
+textarea,
+button {
+  font-family: "Poppins", sans-serif;
+}
+
+.FeedbackMain {
+  width: 400px;
+  margin: 0 auto;
+  height: 100vh;
+  background-image: url("https://www.transparenttextures.com/patterns/ag-square.png");
+}
+
+/* Contact.js */
+.Feedform {
+  height: 100%;
+  padding-top: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.Feedform > h1 {
+  margin-bottom: 30px;
+  font-size: 50px;
+  text-shadow: 1px 1px 1px black,
+    1px 2px 1px black,
+    1px 3px 10px rgba(16,16,16,0.2),
+    1px 2px 35px rgba(16,16,16,0.2),
+    1px 3px 60px rgba(16,16,16,0.4);
+}
+
+.Feedform > .FeedInput,
+textarea {
+  padding: 20px;
+  border-radius: 3px;
+  /* box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.137); */
+  margin-bottom: 20px;
+  border: 1px solid lightgray;
+  /* border: none; */
+  background: #F7F7F7;
+  font-size: 16px;
+  color: #3C4048;
+  outline: none;
+}
+
+.Feedform > .FeedInput:focus,
+textarea:focus {
+  border: 1px solid rgb(0, 0, 196);
+}
+
+.Feedform > textarea {
+  height: 150px;
+  max-width: 400px;
+  min-height: 100px;
+}
+
+.Feedform > label {
+  padding-left: 10px;
+  padding-bottom: 10px;
+  color: #3C4048;
+  font-weight: 600;
+}
+
+.Feedform > button {
+  padding: 20px;
+  border: none;
+  background-color: rgb(2, 2, 110);
+  font-weight: 500;
+  font-size: 20px;
+  border-radius: 3px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  margin-top: 10px;
+}
+
+.Feedform > button:hover {
+  background-color: rgb(0, 0, 196);
+}
+
+
+@media only screen and (max-device-width: 380px) and (min-device-width: 0px){
+  .FeedbackMain {
+    width: 98%;
+    margin: 0 auto;
+    height: 100vh;
+  }
+}

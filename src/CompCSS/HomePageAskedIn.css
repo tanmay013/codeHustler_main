@@ -1,0 +1,30 @@
+.HomePageAskedInMain{
+  position: relative;
+    background-color: #fff;
+    padding-top: 5%;
+}
+
+.HomePageAskedInMain .AskedInHeading h1{
+  text-align: center;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 4.4vw;
+  line-height: 126%;
+  color:#333333;
+}
+
+.HomePageAskedInMain .AskedInShape img{
+  position: absolute;
+  top:7%;
+  left: 12.7%;
+  width: 165.86px;
+  opacity: 0.8;
+}
+
+.HomePageAskedInMain .AskedInCarouselContainerMain{
+  margin-top: 5%;
+  min-height: 50vh;
+  padding-top: 1%;
+  margin-bottom: 0;
+}

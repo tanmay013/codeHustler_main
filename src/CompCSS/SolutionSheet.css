@@ -1,0 +1,65 @@
+.solutionApproach{
+    margin:20px 30px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.solutionApproach p{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    padding-left:10px;
+    font-weight: 500;
+    color: #15133C;
+}
+
+.solutionApproach h2{
+    font-size: 22px;
+    font-weight: 700;
+    color:#2C3333;
+}
+
+.solutionApproach h3{
+    font-size: 20px;
+    margin:10px 0px;
+    color:#2C3333;
+    font-weight: 700;
+}
+
+.codeSliderButtons{
+    margin: 0 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+
+.codeArea{
+    margin-top:20px;
+    border:2px solid black;
+    border-radius: 5px;
+}
+
+.CodeText{
+    font-size: 16px;
+    font-weight: 500;
+    font-family: monospace;
+    word-spacing: 1px;
+    letter-spacing: 1px;
+    
+}
+
+.CodeMain{
+    margin: 0 30px;
+    margin-bottom: 10px;
+    color:#2C3333;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+
+.TabHeading{
+    font-size: 20px;
+    color: aqua;
+}
